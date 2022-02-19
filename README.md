@@ -1,2 +1,2 @@
-# go-npkill
+# gnpkill
 npkill written in GO
