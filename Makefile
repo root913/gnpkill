@@ -1,17 +1,18 @@
 BINARY_NAME=gnpkill
 
-build:
+build_darwin:
 	GOARCH=amd64 GOOS=darwin go build -o bin/${BINARY_NAME}-darwin
+
+build_linux:
 	GOARCH=amd64 GOOS=linux go build -o bin/${BINARY_NAME}-linux
+
+build_windows:
 	GOARCH=amd64 GOOS=windows go build -o bin/${BINARY_NAME}-windows.exe
 
-run:
-	./${BINARY_NAME}
-
-build_and_run: build run
+build: build_darwin build_linux build_windows
 
 clean:
 	go clean
-	rm ${BINARY_NAME}-darwin
-	rm ${BINARY_NAME}-linux
-	rm ${BINARY_NAME}-windows.exe
+	rm bin/${BINARY_NAME}-darwin
+	rm bin/${BINARY_NAME}-linux
+	rm bin/${BINARY_NAME}-windows.exe
