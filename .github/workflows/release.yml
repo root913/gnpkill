@@ -37,6 +37,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: release
+          path: bin
 
       - name: Release
         uses: softprops/action-gh-release@v1
