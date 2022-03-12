@@ -1,4 +1,4 @@
-module github.com/root913/gnpkill/packages
+module github.com/root913/gnpkill
 
 go 1.16
 
