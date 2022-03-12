@@ -8,6 +8,10 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+var (
+	version = "unknown"
+)
+
 func startListingOfDirs(path string) map[string]NodeModulesDirectory {
 	result := map[string]NodeModulesDirectory{}
 	w := Walker{
@@ -26,6 +30,7 @@ func main() {
 	app := cli.NewApp()
 	app.EnableBashCompletion = true
 	app.Name = "npkill in GO"
+	app.Version = version
 	app.Action = func(c *cli.Context) error {
 		path, err := os.Getwd()
 		if err != nil {
